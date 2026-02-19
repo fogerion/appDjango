@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'main', #зарегали приложение main
+    'main', #зарегали приложение main\
+    'goods', #зарегали новое приложение goods
 ]
 
 MIDDLEWARE = [
