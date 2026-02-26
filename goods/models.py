@@ -21,6 +21,9 @@ class Categories(models.Model):
         db_table = 'category'
         verbose_name ='Категорию'
         verbose_name_plural = 'Категории'
+    
+    def __str__(self):
+        return self.name
 
 class Products(models.Model):
     name = models.CharField(
@@ -54,7 +57,7 @@ class Products(models.Model):
     )
     discount= models.DecimalField(
         default=0.00,
-        max_digits=7,
+        max_digits=4,
         decimal_places=2,
         verbose_name='скидка в процентах'
     )
@@ -72,3 +75,6 @@ class Products(models.Model):
         db_table = 'product'
         verbose_name ='Товар'
         verbose_name_plural = 'Товары'
+
+    def __str__(self):
+        return f'{self.name} Количество - {self.quantity}'

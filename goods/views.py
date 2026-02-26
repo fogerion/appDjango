@@ -80,7 +80,7 @@ def catalog(request):
             },
         ],
     }
-    return render(request, "goods/catalog.html", context)
+    return render(request, "goods/catalog.html",)
 
 
 def product(request):
