@@ -6,11 +6,10 @@ from goods.models import Categories
 
 def index(request):
     #return HttpResponse('Home page')
-    categories = Categories.objects.all()
+    
     context: dict = {
         'title': 'Home-Главная',
         'content': 'Магазин мебели FOGER',
-        'categories': categories,
     }
     return render(request, 'main/index.html', context)
 
