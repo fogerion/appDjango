@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from goods.models import Products
 
 # Create your views here.
-def catalog(request):
+def catalog(request, category_slug):
 
-    goods = Products.objects.all() #получаем все товары
+    if category_slug=='all':
+        goods = Products.objects.all() #получаем все товары
+    else:
+        goods = get_object_or_404(Products.objects.filter(category__slug=category_slug)) #получаем все товар
 
     context: dict = {
         "title": "Home - Каталог",
@@ -14,6 +17,7 @@ def catalog(request):
 
 
 def product(request, product_slug):
+    
     product = Products.objects.get(slug=product_slug)
 
     context = {
