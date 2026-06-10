@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'goods', #зарегали новое приложение goods
     'users',
     'carts',
+    'orders',
 ]
 
 MIDDLEWARE = [
