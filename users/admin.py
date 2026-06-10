@@ -1,10 +1,11 @@
 from django.contrib import admin
 
+from carts.admin import CartTabAdmin
 from users.models import User
 
-admin.site.register(User)
-#admin.site.register(Products)
-
-# @admin.register(Categories)
-# class CategoriesAdmin(admin.ModelAdmin):
-#     prepopulated_fields = {'slug': ('name',)}
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display=["username", "first_name", "last_name", "email",]
+    search_fields=["username", "first_name", "last_name", "email",]
+    
+    inlines=[CartTabAdmin, ]
